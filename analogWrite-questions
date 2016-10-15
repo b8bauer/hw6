@@ -1,0 +1,12 @@
+A. Why can you only use certain pins for analogWrite()?
+
+Because most pins only have a PWM frequency of about 490 Hz, 
+but in order to make writing PWM values look seamless, 
+you need a pin with a PWM frequency of 980 Hz, 
+which is only available on some.
+
+B. What is the range the map() function maps the value to? Why this range?
+
+The range that the map() function maps to when using analogWrite is 0-255 
+because it is being outputted to a digital sources which reads data in bytes
+which are written in binary code that can only add up to a maximum of 255.
